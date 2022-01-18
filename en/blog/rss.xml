@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Makoto Uwaya Portfolio Blog</title>
-        <link>https://your-docusaurus-test-site.com/en/blog</link>
+        <link>https://your-docusaurus-test-site.com/portfolio/en/blog</link>
         <description>Makoto Uwaya Portfolio Blog</description>
         <lastBuildDate>Wed, 19 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[MDX Blog Post]]></title>
-            <link>https://your-docusaurus-test-site.com/en/blog/mdx-blog-post</link>
+            <link>https://your-docusaurus-test-site.com/portfolio/en/blog/mdx-blog-post</link>
             <guid>mdx-blog-post</guid>
             <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></description>
@@ -18,7 +18,7 @@
         </item>
         <item>
             <title><![CDATA[最初のブログ]]></title>
-            <link>https://your-docusaurus-test-site.com/en/blog/start-blog</link>
+            <link>https://your-docusaurus-test-site.com/portfolio/en/blog/start-blog</link>
             <guid>start-blog</guid>
             <pubDate>Tue, 18 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></description>

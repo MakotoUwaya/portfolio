@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://your-docusaurus-test-site.com/en/blog</id>
+    <id>https://your-docusaurus-test-site.com/portfolio/en/blog</id>
     <title>Makoto Uwaya Portfolio Blog</title>
     <updated>2022-01-19T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://your-docusaurus-test-site.com/en/blog"/>
+    <link rel="alternate" href="https://your-docusaurus-test-site.com/portfolio/en/blog"/>
     <subtitle>Makoto Uwaya Portfolio Blog</subtitle>
-    <icon>https://your-docusaurus-test-site.com/en/img/favicon.ico</icon>
+    <icon>https://your-docusaurus-test-site.com/portfolio/en/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[MDX Blog Post]]></title>
         <id>mdx-blog-post</id>
-        <link href="https://your-docusaurus-test-site.com/en/blog/mdx-blog-post"/>
+        <link href="https://your-docusaurus-test-site.com/portfolio/en/blog/mdx-blog-post"/>
         <updated>2022-01-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></summary>
         <content type="html"><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/">MDX</a>.</p><p>:::tip</p><p>Use the power of React to create interactive blog posts.</p><pre><code class="language-js">&lt;button onClick={() =&gt; alert(&#x27;button clicked!&#x27;)}&gt;Click me!&lt;/button&gt;
@@ -23,7 +23,7 @@
     <entry>
         <title type="html"><![CDATA[最初のブログ]]></title>
         <id>start-blog</id>
-        <link href="https://your-docusaurus-test-site.com/en/blog/start-blog"/>
+        <link href="https://your-docusaurus-test-site.com/portfolio/en/blog/start-blog"/>
         <updated>2022-01-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></summary>
         <content type="html"><![CDATA[<p><a href="https://docusaurus.io/docs/blog">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog">blog plugin</a>.</p><p>残り少ない人生、日記代わりにやったことを書き残していこうと思う</p>]]></content>
