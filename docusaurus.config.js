@@ -7,13 +7,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Makoto Uwaya Portfolio',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://makotouwaya.github.io',
   baseUrl: '/portfolio/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'MakotoUwaya', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'portfolio', // Usually your repo name.
 
   presets: [
     [

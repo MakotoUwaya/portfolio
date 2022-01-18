@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
+import config from '../../docusaurus.config';
 
 type FeatureItem = {
   title: string;
@@ -11,7 +12,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Easy to Use',
-    image: '/img/undraw_docusaurus_mountain.svg',
+    image: `${config.baseUrl}img/undraw_docusaurus_mountain.svg`,
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and
@@ -21,7 +22,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Focus on What Matters',
-    image: '/img/undraw_docusaurus_tree.svg',
+    image: `${config.baseUrl}img/undraw_docusaurus_tree.svg`,
     description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
@@ -31,7 +32,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Powered by React',
-    image: '/img/undraw_docusaurus_react.svg',
+    image: `${config.baseUrl}img/undraw_docusaurus_react.svg`,
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can
