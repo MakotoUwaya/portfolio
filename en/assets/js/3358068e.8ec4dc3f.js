@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[424],{4228:function(o){o.exports=JSON.parse('{"allTagsPath":"/portfolio/en/blog/tags","slug":"/portfolio/en/blog/tags/wpf","name":"WPF","count":1,"permalink":"/portfolio/en/blog/tags/wpf"}')}}]);
