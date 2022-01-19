@@ -73,10 +73,6 @@ const config = {
                 label: 'Docs',
                 to: '/docs/intro',
               },
-              {
-                label: 'Windows',
-                to: '/docs/windows/visual-studio-2017-edition',
-              },
             ],
           },
           {
