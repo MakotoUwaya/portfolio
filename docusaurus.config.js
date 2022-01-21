@@ -108,11 +108,16 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      algolia: {
+        appId: '9T4LPWYGEG',
+        apiKey: '9adb9b34c8fc37c86bbafa2e5dba7871',
+        indexName: 'sitemap.xml'
+      }
     }),
   i18n: {
     defaultLocale: 'ja',
     locales: ['ja', 'en'],
-  },
+  }
 };
 
 module.exports = config;
