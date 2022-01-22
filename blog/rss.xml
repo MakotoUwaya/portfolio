@@ -4,9 +4,24 @@
         <title>Makoto Uwaya Portfolio Blog</title>
         <link>https://makotouwaya.github.io/portfolio/blog</link>
         <description>Makoto Uwaya Portfolio Blog</description>
-        <lastBuildDate>Tue, 18 Jan 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 22 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Snowpack で Jest v27 にアップデートする]]></title>
+            <link>https://makotouwaya.github.io/portfolio/blog/2022/01/22/snowpack-jest-v27-fix</link>
+            <guid>/2022/01/22/snowpack-jest-v27-fix</guid>
+            <pubDate>Sat, 22 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Jest v27 にアップデートすると、 Jest 実行時にエラーが出る]]></description>
+            <content:encoded><![CDATA[<h2>Jest v27 にアップデートすると、 Jest 実行時にエラーが出る</h2><p>Snowpack の Issue <a href="https://github.com/withastro/snowpack/issues/3398">#3398</a> で報告されている通り、<br/>
+<!-- -->React 向け Jest config 内で参照している Jest バージョンが古いため、実行時エラーになってしまう</p><pre><code>● Test suite failed to run
+TypeError: Cannot destructure property &#x27;config&#x27; of &#x27;cacheKeyOptions&#x27; as it is undefined.
+  at Object.getCacheKey (node_modules/babel-jest/build/index.js:217:14)
+</code></pre><p>私が確認した環境では全てのテストで上記のエラーが出ていた</p><h2>原因</h2><ul><li>npm で配信されている Snowpack の最新版は v3.8.8(2022-01-22現在)</li><li>Jest 利用時の config として<a href="https://www.snowpack.dev/guides/jest">推奨</a>されている <code>@snowpack/app-scripts-react</code> は v2.0.1 が最新で、<br/>最終リリースは2021-03頃</li><li>同一リポジトリで管理されている<a href="https://github.com/withastro/snowpack/blob/97b2e94e627cab0e79162ce4ed7a3768d64b5591/create-snowpack-app/app-scripts-react/package.json#L23">@snowpack/app-scripts-react</a>は v2.0.1 時点だと babel-jest v26.2.2 を参照している</li><li>その後、<a href="https://github.com/withastro/snowpack/commit/f77639b81f61c47b69f7a5df27648f36146ab25f#diff-e5b2a9577e92c42f45ebb12756f19173200914f261c323ee12bc8f76da565261">f77639b</a>のコミットで Jest v27 対応が行われているが、リリースが行われておらず npm が更新されない</li></ul><h2>暫定対応</h2><h3>問題のパッケージをアンインストール</h3><ul><li><code>@snowpack/app-scripts-react</code> をアンインストール</li><li>Jest の config ファイルから require を削除して、transform など必要な箇所のみコピー<ul><li><code>babelTransform.js</code> <code>fileTransform.js</code> <code>importMetaBabelPlugin.js</code> の3ファイルをコピーした</li></ul></li></ul><h3>必要なパッケージを個別にインストール</h3><p>下記のパッケージが不足した状態になるので追加インストールする</p><ul><li><code>babel-jest</code></li><li><code>babel-preset-react-app</code></li><li><code>@snowpack/plugin-dotenv</code></li></ul><h3>Jest v27 にアップデートする</h3><ul><li>@types/jest も合わせて v27 にアップデートする</li></ul><h3>動作確認</h3><p>テストが成功することを確認する</p><div><div value="npm" default=""><pre><code class="language-sh">npm run test
+</code></pre></div><div value="yarn"><pre><code class="language-sh">yarn test
+</code></pre></div></div><h2>Snowpack はもう開発してない？</h2><p>2021年10月以降リリースも無く、コードもほとんど動いていない</p><p><img src="snowpack_contributoers.png" alt="snowpack_contributoers"/></p><p>今どんな状態なんだろうか・・・<br/>
+<!-- -->CRAv5 + Vite が安定して動いているので鞍替えしようかな</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Start Docusaurus Blog]]></title>
             <link>https://makotouwaya.github.io/portfolio/blog/start-blog</link>
