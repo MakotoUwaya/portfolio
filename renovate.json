@@ -1,5 +1,12 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "labels": ["renovate"],
+  "dependencyDashboard": true,
+  "rebaseWhen": "never",
+  "timezone": "Asia/Tokyo",
+  "schedule": ["after 10pm and before 5am on every weekday", "every weekend"],
+  "separateMinorPatch": true,
+  "automerge": true
 }
