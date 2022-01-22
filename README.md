@@ -20,7 +20,7 @@ To activate Algolia DocSearch, need to create an index using docker image.
 1. Set param into .env.local  
     ```
     APPLICATION_ID=YOUR_APP_ID
-    API_KEY=YOUR_API_KEY()
+    API_KEY=YOUR_API_KEY
     ```
     Make sure to use an API key with write access to your index.   
     It needs [the ACL addObject, editSettings and deleteIndex](https://www.algolia.com/doc/guides/security/api-keys/#acl).
