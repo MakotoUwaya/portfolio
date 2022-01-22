@@ -111,7 +111,7 @@ const config = {
       algolia: {
         appId: '9T4LPWYGEG',
         apiKey: '9adb9b34c8fc37c86bbafa2e5dba7871',
-        indexName: 'sitemap.xml'
+        indexName: 'portfolio'
       }
     }),
   i18n: {
