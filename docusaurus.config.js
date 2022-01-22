@@ -11,7 +11,7 @@ const config = {
   baseUrl: '/portfolio/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/floppy.svg',
   organizationName: 'MakotoUwaya',
   projectName: 'portfolio',
 
@@ -46,7 +46,7 @@ const config = {
         title: 'Makoto Uwaya Portfolio',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/floppy.svg',
         },
         items: [
           {
