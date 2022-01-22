@@ -26,7 +26,7 @@ To activate Algolia DocSearch, need to create an index using docker image.
     It needs [the ACL addObject, editSettings and deleteIndex](https://www.algolia.com/doc/guides/security/api-keys/#acl).
 1. Run the crawl from the Docker image
     ```sh
-    docker run -it --env-file=docsearch/.env.local -e "CONFIG=$(cat docsearch/config.json | jq -r tostring)" algolia/docsearch-scraper
+    docker run -it --rm --env-file=docsearch/.env.local -e "CONFIG=$(cat docsearch/config.json | jq -r tostring)" algolia/docsearch-scraper
     ```
 
 Next time, only docker run.
