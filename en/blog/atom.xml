@@ -2,11 +2,44 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://makotouwaya.github.io/portfolio/en/blog</id>
     <title>Makoto Uwaya Portfolio Blog</title>
-    <updated>2022-02-02T00:00:00.000Z</updated>
+    <updated>2022-02-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://makotouwaya.github.io/portfolio/en/blog"/>
     <subtitle>Makoto Uwaya Portfolio Blog</subtitle>
     <icon>https://makotouwaya.github.io/portfolio/en/img/floppy.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Windows 11 のインストール]]></title>
+        <id>/2022/02/07/windows11-install</id>
+        <link href="https://makotouwaya.github.io/portfolio/en/blog/2022/02/07/windows11-install"/>
+        <updated>2022-02-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[PC 入れ替えの続き]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_mojV" id="pc-入れ替えの続き">PC 入れ替えの続き<a class="hash-link" href="#pc-入れ替えの続き" title="Direct link to heading">​</a></h2><p>ハードウェアの準備は一通り完了して、マザーボードの UEFI 設定画面を起動することができた。
+デフォルトだと派手に光を放っていたので、スッと無効化しておく。</p><p>CPU、Memory、GPUが問題なく認識されていることを確認したり、冷却ファンの回転数を調整して遊んでみたりした後、
+さて、ブートシーケンスの順序でも設定するか、とそれらしい画面に切り替えてみたが、ブート可能な HDD が1つも無い。</p><p>あれ？ M.2 の取付ソケット間違えたかな？ SATA も3つとも接続ミスしてるとかあるのか？と思い、<br>
+<!-- -->再起動して F11 キーを連打するも「ブート可能なデバイスがありません」となる。</p><p>まあいいか・・・Windows 10 のインストールメディア(USB)入れて起動すればディスクが見えるかどうか分かるはず<br>
+<!-- -->・・・しかし、このインストールメディアすら認識されない。</p><p>ここから UEFI の設定値を1つづつチェックする作業が始まった。。。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="何が問題だったのか">何が問題だったのか<a class="hash-link" href="#何が問題だったのか" title="Direct link to heading">​</a></h2><p>結論から言うと、Windows 10 のインストールメディア(USB)を使っていると UEFI では認識されない。</p><blockquote><p><a href="https://nomadit.jp/pc/windows/post-11298" target="_blank" rel="noopener noreferrer">【OSインストール】Windows10のUSBメモリーはUEFIブートできないため作り直す必要あり</a></p></blockquote><p>このブログに書いてある通りで、 Rufus を使って USB メモリーに Windows 10 の ISO データを書き込むことで UEFI ブートができるようになった。<br>
+<!-- -->(今まで特に必要がなく、 USB メモリ※リムーバブルディスク を持っていなかったので 32GB で 1,000円くらいの製品を購入した)</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="試行錯誤">試行錯誤<a class="hash-link" href="#試行錯誤" title="Direct link to heading">​</a></h3><p>ここに行きつくまでに、セキュアブートを無効化したり、レガシー起動オプションを有効化したりと迷走してしまった。<br>
+<!-- -->まさかメーカー純正のインストールメディアがレガシーなインストール方法にしか対応していないとは考えも及ばず、<br>
+<!-- -->「このメディアを使って何か設定を変えれば UEFI ブート対応できるはず」というところで思考していたので、無駄に MBR インストールしてしまい
+後から UEFI メディアでクリーンインストールをする羽目になった。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="mbr-disk-から-gpt-disk-への変換">MBR disk から <a href="https://docs.microsoft.com/ja-jp/windows-hardware/manufacture/desktop/windows-and-gpt-faq?view=windows-11" target="_blank" rel="noopener noreferrer">GPT disk</a> への変換<a class="hash-link" href="#mbr-disk-から-gpt-disk-への変換" title="Direct link to heading">​</a></h3><p>MBR disk は UEFI から認識されない。<br>
+<!-- -->せっかく UEFI ブート可能な USB メモリで Windows 10 インストーラ を起動しても、 MBR のディスクが見えることは無い。</p><p>そこで、<a href="https://docs.microsoft.com/en-us/windows-server/storage/disk-management/change-an-mbr-disk-into-a-gpt-disk" target="_blank" rel="noopener noreferrer">リファレンス</a>を参考に
+インストーラのディスク選択画面でコマンドプロンプトを起動(キーボードの「Shift」と「F10」を押下)し、 diskpart を使って GPT disk に変換する<br>
+<!-- -->(<a href="https://docs.microsoft.com/ja-jp/windows-server/storage/disk-management/change-an-mbr-disk-into-a-gpt-disk" target="_blank" rel="noopener noreferrer">日本語ページ</a>だと
+コマンドの表記がおかしいので注意)</p><p>GPT disk に変換した後は、 UEFI のブート選択画面からも参照できるようになった！</p><p>このタイミングで、レガシー起動オプションは無効化してセキュアブートを有効化した。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="windows-11-のインストール">Windows 11 のインストール<a class="hash-link" href="#windows-11-のインストール" title="Direct link to heading">​</a></h2><p>Windows 10 のインストールが成功し、セキュリティアップデートもすべて適用した状態で Windows 11 のアップデートツールを実行した。<br>
+<!-- -->M.2 の書き込みが高速なお陰で、ほとんど時間もかからず無事にアップデートが完了。
+足掛け4日かけて新しい OS の UI を目にすることができた。</p><p><img alt="windows11-task-manager" src="/portfolio/en/assets/images/windows11-task-manager-57bea7965a95b62fa50c357270cf9be4.png" width="3840" height="2160"></p><h2 class="anchor anchorWithStickyNavbar_mojV" id="アプリケーションのインストール">アプリケーションのインストール<a class="hash-link" href="#アプリケーションのインストール" title="Direct link to heading">​</a></h2><p><code>winget</code> がかなり使いやすくなっていて、 Windows 11 だと標準でインストールされていた。
+パッケージ名を指定して install するスクリプトを用意しておくだけで、ほとんど自動的に必要なツールのインストールが終わってしまった。</p><p>設定を復元するスクリプトも作っておくともっと楽ができそうだが、バージョンの差異によって微妙に挙動が違ったりするので
+このあたりは動作確認も兼ねて手動操作で見ていく感じでも良いかも知れない。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="終わり">終わり<a class="hash-link" href="#終わり" title="Direct link to heading">​</a></h2><p>PC 入れ替えも完了して、なにもかもがサクサク動作しており、Windows 11 使い倒してみようという気持ちになっている。</p><p>今のところ Windows 10 で動作していて 11 では動かないというものは一つもない。<br>
+<!-- -->UI は好き嫌いあると思うが、角丸のウィンドウデザインはしばらく使っていたら慣れてしまった。</p><p>エクスプローラのコンテキストメニューは、分かりやすさを追及して現状の形になったと思われるが、
+かなりの頻度で「Show more options」を選んで旧来のコンテキストメニューを表示している気がする。<br>
+<!-- -->日常的な操作性は少しづつカスタマイズしていこうと思う。</p><p>せっかくだから近いうちに <a href="https://docs.microsoft.com/en-us/windows/apps/winui/" target="_blank" rel="noopener noreferrer">WinUI 3</a> にも入門してみようかな。</p>]]></content>
+        <author>
+            <name>Makoto　Uwaya</name>
+            <uri>https://github.com/MakotoUwaya</uri>
+        </author>
+        <category label="UEFI" term="UEFI"/>
+        <category label="Windows11" term="Windows11"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Intel 12th Gen CPU に換装した]]></title>
         <id>/2022/02/02/lga1700-replace</id>
@@ -49,10 +82,15 @@ USB2.0で同様にプラスチック部分がすっぽ抜けた事がありま�
 後から端子だけ取り付けなおすみたいなことをやった。</p><p>マルチカードリーダライタはほとんど使っていないので、新しいマザーボードでは結線しないでおくことにした。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="cpu-クーラーが取り付けられない">CPU クーラーが取り付けられない<a class="hash-link" href="#cpu-クーラーが取り付けられない" title="Direct link to heading">​</a></h3><p>自作慣れしている人には常識だと思うが、CPU ソケットの変化によってクーラーが取付できなくなることがある。
 (取付用マウントパーツが販売されていたりする)</p><p>LGA1151 → LGA1700 でも同様で、既存の CPU クーラーはまだまだ使えそうだったので転用する予定だったが、
 持っているクーラーが古すぎてマウントパーツが適合しなかった。</p><p>加えて、12600K の CPU を購入していたので Intel の CPU クーラーは付属していなかった。
-どうしようもなく、下記製品を追加購入することに(約5千円)</p><table><thead><tr><th>Parts</th><th>Spec</th></tr></thead><tbody><tr><td>GPU</td><td>サイズ LGA1700 対応 虎徹 Mark II Rev.B SCKTT-2100</td></tr></tbody></table><p>まだかろうじて予算内だ。。。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="パーツ入替">パーツ入替<a class="hash-link" href="#パーツ入替" title="Direct link to heading">​</a></h3><p>自作といいながら、やっていることは部品を入れ替えているだけなので特筆することは何もない。
+どうしようもなく、下記製品を追加購入することに(約5千円)</p><table><thead><tr><th>Parts</th><th>Spec</th></tr></thead><tbody><tr><td>GPU</td><td>サイズ LGA1700 対応 虎徹 Mark II Rev.B SCKTT-2100</td></tr></tbody></table><p>まだかろうじて予算内だ。。。</p><div class="admonition admonition-info alert alert--info"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</h5></div><div class="admonition-content"><p>ASUS のマザーボードなら LGA1200 用の CPU クーラーと互換性があるらしい。<br>
+<a href="https://edgeup.asus.com/2021/z690-motherboard-guide/" target="_blank" rel="noopener noreferrer">Broad CPU cooler compatibility</a> のあたり</p><p>noctua の <a href="https://noctua.at/en/productfaqs/productfaq/view/id/236/" target="_blank" rel="noopener noreferrer">FAQ</a> によると、</p><blockquote><p>Intelの新しいLGA1200プラットフォーム（コードネームComet Lake S、Z490チップセット）のヒートシンクの取り付けは、
+すべてのLGA115xソケット（LGA1150、LGA1151、LGA1155、LGA1156）と同じです。<br>
+<!-- -->したがって、LGA115xに対応するすべてのNoctua CPUクーラーはLGA1200にも対応し、マウントの更新は必要ありません。</p></blockquote><p>とのこと。
+どうしても現在の CPU クーラーを転用したい場合は、対応しているマザーボードを探してみても良かったかも。</p></div></div><h3 class="anchor anchorWithStickyNavbar_mojV" id="パーツ入替">パーツ入替<a class="hash-link" href="#パーツ入替" title="Direct link to heading">​</a></h3><p>自作といいながら、やっていることは部品を入れ替えているだけなので特筆することは何もない。
 私のような不慣れな人向けにメモを残すとするなら、作業の順番に気をつけると狭いところに手を入れずに済み、楽に早くできると思う。</p><ol><li>現状を写真に取りながら、マザーボードから配線を1つづつ外していく</li><li>マザーボードに取り付けられているパーツを全部外す</li></ol><ul><li>これも写真を撮っておくと安心</li></ul><ol start="3"><li>マザーボードをケースから取り外す</li></ol><ul><li>LGA1151 用のマウントパーツも一緒に除去する</li></ul><ol start="4"><li>LGA1700 対応のマザーボードにマウントパーツを取り付ける</li><li>マザーボードを取り付ける</li><li>ケースの配線をする</li><li>CPU クーラーを取り付ける</li><li>写真を見ながら残りのパーツをすべて取り付ける</li></ol><h2 class="anchor anchorWithStickyNavbar_mojV" id="続く">続く<a class="hash-link" href="#続く" title="Direct link to heading">​</a></h2><p>CPU クーラーの購入忘れはあったものの、パーツの取付自体はすんなり完了した。
 UEFI の起動まではできたが、ブート可能な HDD が1つも無い。</p><p>UEFI とセキュアブートの知識が足りなさ過ぎたので、ここから Windows 11 のインストール完了まではまだまだ時間を要することになる。
-続きはまだ後日。</p>]]></content>
+続きはまだ後日。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="追記">追記<a class="hash-link" href="#追記" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_mojV" id="中古パーツの買取について">中古パーツの買取について<a class="hash-link" href="#中古パーツの買取について" title="Direct link to heading">​</a></h3><p>入れ替えによって使わなくなった下記パーツを中古パーツ買取を営んでいる<strong>じゃんぱら</strong>に持って行ってみた。<br>
+<!-- -->MB は箱が無かったのでマイナス400円だったが、合計8,300円になってひとまず満足。</p><table><thead><tr><th>Parts</th><th>Spec</th><th align="right">Price</th></tr></thead><tbody><tr><td>CPU</td><td>Intel CPU Core i5-6600 3.3GHz LGA1151</td><td align="right">4,500</td></tr><tr><td>MB</td><td>ASUSTeK H170-PRO</td><td align="right">3,600</td></tr><tr><td>COL</td><td>虎徹 12cmサイドフロー SCKTT-1000</td><td align="right">200</td></tr></tbody></table><p>5年毎に買い替えをすることを考えて、途中で修理に出す可能性もあるし、高額パーツの外箱は一応保管しておくことにする。</p>]]></content>
         <author>
             <name>Makoto　Uwaya</name>
             <uri>https://github.com/MakotoUwaya</uri>
