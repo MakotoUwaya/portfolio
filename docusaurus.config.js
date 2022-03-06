@@ -34,6 +34,11 @@ const config = {
         gtag: {
           trackingID: 'G-WQFQWCBZT4',
           anonymizeIP: false
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: false,
         }
       }),
     ],
