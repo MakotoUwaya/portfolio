@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[5350],{4335:function(o){o.exports=JSON.parse('{"allTagsPath":"/portfolio/en/blog/tags","name":"Intel","count":1,"permalink":"/portfolio/en/blog/tags/intel"}')}}]);

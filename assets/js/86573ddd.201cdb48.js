@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[6955],{5689:function(o){o.exports=JSON.parse('{"allTagsPath":"/portfolio/blog/tags","slug":"/portfolio/blog/tags/lga-1700","name":"LGA1700","count":1,"permalink":"/portfolio/blog/tags/lga-1700"}')}}]);

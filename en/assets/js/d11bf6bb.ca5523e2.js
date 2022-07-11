@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[4353],{5903:function(o){o.exports=JSON.parse('{"allTagsPath":"/portfolio/en/blog/tags","name":"Docusaurus","count":1,"permalink":"/portfolio/en/blog/tags/docusaurus"}')}}]);
