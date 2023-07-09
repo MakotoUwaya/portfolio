@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[2213],{6302:function(o){o.exports=JSON.parse('{"allTagsPath":"/portfolio/en/blog/tags","name":"GTX950","count":1,"permalink":"/portfolio/en/blog/tags/gtx-950"}')}}]);

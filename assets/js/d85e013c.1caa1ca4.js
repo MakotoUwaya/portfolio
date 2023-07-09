@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[6949],{2981:function(o){o.exports=JSON.parse('{"allTagsPath":"/portfolio/blog/tags","name":"NVIDIA","count":1,"permalink":"/portfolio/blog/tags/nvidia"}')}}]);
