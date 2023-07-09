@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[8265],{4699:function(o){o.exports=JSON.parse('{"label":"Dialy","permalink":"/portfolio/en/blog/tags/dialy","allTagsPath":"/portfolio/en/blog/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[1170],{510:function(o){o.exports=JSON.parse('{"label":"Jest","permalink":"/portfolio/en/blog/tags/jest","allTagsPath":"/portfolio/en/blog/tags","count":1}')}}]);

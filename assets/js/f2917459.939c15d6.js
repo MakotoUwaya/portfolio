@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[1821],{3943:function(o){o.exports=JSON.parse('{"label":"Microsoft","permalink":"/portfolio/blog/tags/microsoft","allTagsPath":"/portfolio/blog/tags","count":2}')}}]);

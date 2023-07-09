@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[5513],{1234:function(o){o.exports=JSON.parse('{"label":"GPU","permalink":"/portfolio/blog/tags/gpu","allTagsPath":"/portfolio/blog/tags","count":1}')}}]);

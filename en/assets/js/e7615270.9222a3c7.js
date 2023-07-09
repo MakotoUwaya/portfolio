@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[417],{4134:function(o){o.exports=JSON.parse('{"label":"Visual Studio","permalink":"/portfolio/en/blog/tags/visual-studio","allTagsPath":"/portfolio/en/blog/tags","count":1}')}}]);

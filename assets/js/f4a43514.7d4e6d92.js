@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[8967],{8995:function(o){o.exports=JSON.parse('{"label":".NET Core","permalink":"/portfolio/blog/tags/net-core","allTagsPath":"/portfolio/blog/tags","count":1}')}}]);

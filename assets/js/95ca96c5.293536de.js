@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[7700],{2323:function(o){o.exports=JSON.parse('{"label":"Snowpack","permalink":"/portfolio/blog/tags/snowpack","allTagsPath":"/portfolio/blog/tags","count":1}')}}]);

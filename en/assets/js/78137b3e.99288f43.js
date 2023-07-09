@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[462],{4994:function(o){o.exports=JSON.parse('{"label":"UEFI","permalink":"/portfolio/en/blog/tags/uefi","allTagsPath":"/portfolio/en/blog/tags","count":1}')}}]);

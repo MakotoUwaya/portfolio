@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[8843],{437:function(o){o.exports=JSON.parse('{"label":"RTX4070","permalink":"/portfolio/blog/tags/rtx-4070","allTagsPath":"/portfolio/blog/tags","count":1}')}}]);

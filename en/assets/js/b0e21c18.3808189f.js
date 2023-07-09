@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[2850],{7226:function(o){o.exports=JSON.parse('{"label":"Windows11","permalink":"/portfolio/en/blog/tags/windows-11","allTagsPath":"/portfolio/en/blog/tags","count":2}')}}]);
